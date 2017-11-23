@@ -1,0 +1,2 @@
+# magiland
+ Sphinx for ReadtheDocs
