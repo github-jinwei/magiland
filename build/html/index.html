@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Welcome to Magiland’s documentation! &#8212; Magiland 1.0 文档</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -23,45 +23,20 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="搜索" href="search.html" />
-   
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
-
+    <link rel="search" title="搜索" href="search.html" /> 
   </head>
-  <body>  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="welcome-to-magiland-s-documentation">
-<h1>Welcome to Magiland’s documentation!<a class="headerlink" href="#welcome-to-magiland-s-documentation" title="永久链接至标题">¶</a></h1>
-<div class="toctree-wrapper compound">
-</div>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="永久链接至标题">¶</a></h1>
-<ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">索引</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">模块索引</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">搜索页面</span></a></li>
-</ul>
-</div>
-
-
-          </div>
-        </div>
-      </div>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="nav-item nav-item-0"><a href="#">Magiland 1.0 文档</a> &#187;</li> 
+      </ul>
+    </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="#">Documentation overview</a><ul>
-  </ul></li>
-</ul>
-</div>
+        <div class="sphinxsidebarwrapper">
 <div id="searchbox" style="display: none" role="search">
   <h3>快速搜索</h3>
     <form class="search" action="search.html" method="get">
@@ -74,22 +49,537 @@
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-magiland-s-documentation">
+<h1>Welcome to Magiland’s documentation!<a class="headerlink" href="#welcome-to-magiland-s-documentation" title="永久链接至标题">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="api-v2-2">
+<h1>API v2.2<a class="headerlink" href="#api-v2-2" title="永久链接至标题">¶</a></h1>
+<ul class="simple">
+<li><span class="xref std std-ref">LatestVersion 版本更新</span></li>
+<li><span class="xref std std-ref">MagicDeviceSignIn 设备号登陆</span></li>
+<li><span class="xref std std-ref">MagicPuller 获取场景列表</span></li>
+<li><span class="xref std std-ref">MagicRegister 手机号码及VIP码登录</span></li>
+<li><span class="xref std std-ref">MagicBonder 设备号与手机号码绑定</span></li>
+<li><span class="xref std std-ref">MagicValidate 验证号码</span></li>
+<li><span class="xref std std-ref">MagicCharger 用户付款服务</span></li>
+<li><span class="xref std std-ref">MagicDLRecorder 手机号码关联深度链接ID</span></li>
+<li><span class="xref std std-ref">Feedback 用户反馈</span></li>
+<li><span class="xref std std-ref">Event 打点事件</span></li>
+</ul>
+<p>###LatestVersion</p>
+<p><strong>url:</strong> <a class="reference external" href="http://HOSTNAME/BlingoServlet/LatestVersion">http://HOSTNAME/BlingoServlet/LatestVersion</a>?</p>
+<p><strong>method:</strong> GET</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="23%" />
+<col width="46%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">params</th>
+<th class="head">type</th>
+<th class="head">desc</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ctype</td>
+<td>char</td>
+<td>客户端类型</td>
+</tr>
+</tbody>
+</table>
+<p><strong>rtype:</strong> string</p>
+<p><strong>return:</strong> 成功返回</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mf">1.6</span><span class="p">:</span><span class="mi">0</span> <span class="c1"># 是否强制更新（0否/1是）</span>
+</pre></div>
+</div>
+<p>###MagicDeviceSignIn</p>
+<p><strong>url:</strong> <a class="reference external" href="http://HOSTNAME/BlingoServlet/MagicDeviceSignIn">http://HOSTNAME/BlingoServlet/MagicDeviceSignIn</a>?</p>
+<p><strong>method:</strong> GET</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="22%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">params</th>
+<th class="head">type</th>
+<th class="head">desc</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>dd</td>
+<td>string</td>
+<td>(加密)设备号</td>
+</tr>
+<tr class="row-odd"><td>dl</td>
+<td>string</td>
+<td>(非必传)深度链接ID</td>
+</tr>
+</tbody>
+</table>
+<p><strong>rtype:</strong> json</p>
+<p><strong>return:</strong> 成功返回</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">bid</span> <span class="o">=</span> <span class="mi">20925</span><span class="p">;</span> <span class="c1">#必果ID</span>
+    <span class="n">did</span> <span class="o">=</span> <span class="n">b91779aef15a4b2f8606826c7910e3fb</span><span class="p">;</span> <span class="c1">#设备ID</span>
+    <span class="n">dl</span> <span class="o">=</span> <span class="mi">097</span><span class="p">;</span> <span class="c1">#深度链接ID</span>
+    <span class="n">pho</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span> <span class="c1">#电话号码</span>
+    <span class="n">reg</span> <span class="o">=</span> <span class="s2">&quot;Tue Nov 21 18:33:05 CST 2017&quot;</span><span class="p">;</span> <span class="c1">#第一次登录时间</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">#状态码（0：新用户，1：用设备号注册，2：有手机号或者微信的用户）</span>
+    <span class="n">wid</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span> <span class="c1">#微信ID</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>###MagicPuller</p>
+<p><strong>url:</strong> <a class="reference external" href="http://HOSTNAME/BlingoServlet/MagicPuller">http://HOSTNAME/BlingoServlet/MagicPuller</a>?</p>
+<p><strong>method:</strong> GET</p>
+<p><strong>rtype:</strong> json</p>
+<p><strong>return:</strong> 成功返回</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="n">scenes</span> <span class="o">=</span>     <span class="p">(</span>
+            <span class="p">{</span>
+        <span class="n">asset</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1"># 服务器端是否有下载资源</span>
+        <span class="n">cname</span> <span class="o">=</span> <span class="s2">&quot;\U5bb6\U5ead\U6210\U5458&quot;</span><span class="p">;</span> <span class="c1"># 中文名称</span>
+        <span class="n">courses</span> <span class="o">=</span> <span class="s2">&quot;grandpa,grandma,father,mother,brother&quot;</span><span class="p">;</span> <span class="c1"># 教学场景单词</span>
+        <span class="n">ename</span> <span class="o">=</span> <span class="s2">&quot;1. Learn-Families&quot;</span><span class="p">;</span> <span class="c1"># 英文名</span>
+        <span class="n">intro</span> <span class="o">=</span> <span class="s2">&quot;grandpa,grandma,father,mother,brother&quot;</span><span class="p">;</span> <span class="c1"># 关键词介绍</span>
+        <span class="n">lock</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1"># 是否锁住</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;course_family&quot;</span><span class="p">;</span> <span class="c1"># 文件名</span>
+        <span class="n">paid</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1"># 是否付费</span>
+        <span class="n">pts</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1"># 得分</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1"># 状态</span>
+        <span class="n">time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1"># 所用时间</span>
+    <span class="p">},</span>
+            <span class="p">{</span>
+        <span class="n">asset</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">cname</span> <span class="o">=</span> <span class="s2">&quot;\U5bb6\U5ead\U5168\U5bb6\U798f&quot;</span><span class="p">;</span>
+        <span class="n">ename</span> <span class="o">=</span> <span class="s2">&quot;1. Anna&#39;s Family&quot;</span><span class="p">;</span>
+        <span class="n">intro</span> <span class="o">=</span> <span class="s2">&quot;mother, father, grandma, grandpa, little brother, sister&quot;</span><span class="p">;</span>
+        <span class="n">lock</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;kid_mi_family&quot;</span><span class="p">;</span>
+        <span class="n">paid</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">pts</span> <span class="o">=</span> <span class="mi">93</span><span class="p">;</span>
+        <span class="n">rounds</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">time</span> <span class="o">=</span> <span class="mi">186</span><span class="p">;</span>
+    <span class="p">},</span>
+            <span class="p">{</span>
+        <span class="n">asset</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">cname</span> <span class="o">=</span> <span class="s2">&quot;\U52a8\U4f5c&quot;</span><span class="p">;</span>
+        <span class="n">courses</span> <span class="o">=</span> <span class="s2">&quot;jump,climb,run,eat,bark&quot;</span><span class="p">;</span>
+        <span class="n">ename</span> <span class="o">=</span> <span class="s2">&quot;2. Learn-Actions&quot;</span><span class="p">;</span>
+        <span class="n">intro</span> <span class="o">=</span> <span class="s2">&quot;jump,climb,run,eat,bark&quot;</span><span class="p">;</span>
+        <span class="n">lock</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;course_actionDog&quot;</span><span class="p">;</span>
+        <span class="n">paid</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">pts</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">},</span>
+            <span class="o">.</span>
+            <span class="o">.</span>
+            <span class="o">.</span>
+
+            <span class="p">{</span>
+        <span class="n">asset</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">cname</span> <span class="o">=</span> <span class="s2">&quot;\U6709\U591a\U5c11\U4e2a\U6c14\U7403&quot;</span><span class="p">;</span>
+        <span class="n">ename</span> <span class="o">=</span> <span class="s2">&quot;7. How Many Balloons&quot;</span><span class="p">;</span>
+        <span class="n">intro</span> <span class="o">=</span> <span class="s2">&quot;one, two, three, four, five, six, seven&quot;</span><span class="p">;</span>
+        <span class="n">lock</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;kid_mi_number&quot;</span><span class="p">;</span>
+        <span class="n">paid</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">pts</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">rounds</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+<span class="n">series</span> <span class="o">=</span>     <span class="p">(</span>
+            <span class="p">{</span>
+           <span class="p">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;magic_season12&quot;</span><span class="p">;</span> <span class="c1">#系列名</span>
+        <span class="n">off</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1"># 是否打折</span>
+        <span class="n">price</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1"># 价格</span>
+    <span class="p">},</span>
+            <span class="p">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;magic_season13&quot;</span><span class="p">;</span>
+        <span class="n">off</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">price</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>###HelloHello</p>
+<p><strong>url:</strong> <a class="reference external" href="http://HOSTNAME/BlingoServlet/HelloHello">http://HOSTNAME/BlingoServlet/HelloHello</a>?</p>
+<p><strong>method:</strong> GET</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">params</th>
+<th class="head">type</th>
+<th class="head">desc</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>file</td>
+<td>string</td>
+<td>脚本名</td>
+</tr>
+<tr class="row-odd"><td>data</td>
+<td>string</td>
+<td>用户语音文本</td>
+</tr>
+<tr class="row-even"><td>nn</td>
+<td>string</td>
+<td>用户设备名或登录名</td>
+</tr>
+<tr class="row-odd"><td>role</td>
+<td>string</td>
+<td>选择的机器角色代号(0 – 女, 1 – 男)</td>
+</tr>
+<tr class="row-even"><td>rr</td>
+<td>string</td>
+<td>随机数</td>
+</tr>
+</tbody>
+</table>
+<p><strong>rtype:</strong> string</p>
+<p><strong>return:</strong> 成功返回</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>. . . 今天我们来学习几种简单的颜色！:scripts/course_family/A0-K-B-0.ogg:A0:P1:
+. . . Look!:scripts/courseModule/B0-K-B-0.ogg:B0::
+. . . This is grandpa, 爷爷. :scripts/courseModule/B4-K-B-0.ogg+scripts/course_family/grandpa_1.ogg+scripts/course_family/grandpa_ch.ogg:B4:P1-grandpa:
+. . . 跟我读, grandpa.:scripts/courseModule/B1-K-B-0.ogg+scripts/course_family/grandpa_1.ogg:B1::
+# . . . 文本信息:音频:动画号:传给unity端颜色类型（p0，p1，p3时为需要飞入的球的颜色；p2时为选择题的正确答案；p4时为球需要变成的颜色）:
+# . . . 文本信息:音频:动画号::
+# . . . 文本信息:音频1+音频2+音频3:动画号:传给unity端颜色类型:
+# . . . 文本信息:音频1+音频2:动画号::
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>. . . Yes, you are right!:scripts/kid_mi_family/3-0-P-K-B-0.ogg:5:10:
+. . . Look, who is she? 再猜猜看她是谁？不知道怎么说也没关系，点一下右上角的灯泡寻求帮助吧！:scripts/kid_mi_family/3-1-K-B-0.ogg:6:-2:She is your grandma.
+# . . . 文本信息:音频:动画号:分数（-1 - 失败；-2 - 无用；&gt;0 - 得分）:
+# . . . 文本信息:音频:动画号:分数:帮助内容
+</pre></div>
+</div>
+<p>###MagicQuerier</p>
+<p><strong>url:</strong> <a class="reference external" href="http://HOSTNAME/BlingoServlet/MagicQuerier">http://HOSTNAME/BlingoServlet/MagicQuerier</a>?</p>
+<p><strong>method:</strong> GET</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="28%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">params</th>
+<th class="head">type</th>
+<th class="head">desc</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>code</td>
+<td>string</td>
+<td>(加密)VIP码</td>
+</tr>
+</tbody>
+</table>
+<p><strong>rtype:</strong> json</p>
+<p><strong>return:</strong> 成功返回</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">exist</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1"># 0 – VIP码不存在, 1 – VIP码存在</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;unlock_magic_season12&quot;</span><span class="p">;</span> <span class="c1"># VIP码名称</span>
+    <span class="n">price</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1"># 产品价格</span>
+    <span class="n">series</span> <span class="o">=</span> <span class="s2">&quot;magic_season12&quot;</span><span class="p">;</span> <span class="c1"># 输入VIP码可以解锁或打折的系列名，以“,”分割</span>
+    <span class="nb">type</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1"># 0 – 解锁型码, 1 – 折扣型码, -1 – 无效码，2 – 超级码</span>
+    <span class="n">used</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1"># 0 – VIP码未使用, 1 – VIP码已使用</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>###MagicRegister</p>
+<p><strong>url:</strong> <a class="reference external" href="http://HOSTNAME/BlingoServlet/MagicRegister">http://HOSTNAME/BlingoServlet/MagicRegister</a>?</p>
+<p><strong>method:</strong> GET</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="27%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">params</th>
+<th class="head">type</th>
+<th class="head">desc</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>dd</td>
+<td>string</td>
+<td>(加密)设备号</td>
+</tr>
+<tr class="row-odd"><td>pp</td>
+<td>string</td>
+<td>(加密)手机号</td>
+</tr>
+<tr class="row-even"><td>code</td>
+<td>string</td>
+<td>(加密)设备号</td>
+</tr>
+<tr class="row-odd"><td>nv</td>
+<td>string</td>
+<td>新版本</td>
+</tr>
+</tbody>
+</table>
+<p><strong>rtype:</strong> string or json</p>
+<p><strong>return:</strong> 成功返回</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">03</span> <span class="c1">#  00 – 无设备号, 02 – 手机号存在, 03 – 手机号不存在</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">bond</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1"># 0 – 设备号未绑定手机，1 – 设备号已绑定手机</span>
+    <span class="n">exist</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">#  0 – VIP码不存在, 1 – VIP码存在</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;unlock_magic_season11&quot;</span><span class="p">;</span> <span class="c1"># VIP码名称</span>
+    <span class="n">pho</span> <span class="o">=</span> <span class="mi">18730603791</span><span class="p">;</span> <span class="c1"># bond=0，空串；bond=1，电话号码</span>
+    <span class="n">price</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1"># 产品价格</span>
+    <span class="n">series</span> <span class="o">=</span> <span class="s2">&quot;magic_season11&quot;</span><span class="p">;</span> <span class="c1"># 输入VIP码可以解锁或打折的系列名，以“,”分割</span>
+    <span class="nb">type</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1"># 0 – 解锁型码, 1 – 折扣型码, -1 – 无效码，2 – 超级码</span>
+    <span class="n">used</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1"># 0 – VIP码未使用, 1 – VIP码已使用, 2 – VIP码成功使用, 3 – VIP码已被使用，且设备号验证成功, 4 – VIP码已被使用，且设备号不是同一设备，且未绑定手机, 5 – VIP码已被使用，且设备号不是同一设备，已绑定手机, 6 - 用户名为””, 7 - 用户不存在</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>###MagicValidate</p>
+<p><strong>url:</strong> <a class="reference external" href="http://HOSTNAME/BlingoServlet/MagicValidate">http://HOSTNAME/BlingoServlet/MagicValidate</a>?</p>
+<p><strong>method:</strong> GET</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="27%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">params</th>
+<th class="head">type</th>
+<th class="head">desc</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>pp</td>
+<td>string</td>
+<td>(加密)手机号</td>
+</tr>
+<tr class="row-odd"><td>code</td>
+<td>string</td>
+<td>(加密)设备号</td>
+</tr>
+</tbody>
+</table>
+<p><strong>rtype:</strong> json</p>
+<p><strong>return:</strong> 成功返回</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">exist</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1"># 0 – VIP码不存在, 1 – VIP码存在</span>
+    <span class="n">used</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1"># 0 – VIP码已被使用，且手机号验证不成功, 1 – VIP码已被使用，且手机号验证成功</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>###MagicCharger</p>
+<p><strong>url:</strong> <a class="reference external" href="http://HOSTNAME/BlingoServlet/MagicCharger">http://HOSTNAME/BlingoServlet/MagicCharger</a>?</p>
+<p><strong>method:</strong> POST</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="21%" />
+<col width="54%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">params</th>
+<th class="head">type</th>
+<th class="head">desc</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>channel</td>
+<td>string</td>
+<td>付费方式</td>
+</tr>
+<tr class="row-odd"><td>subject</td>
+<td>string</td>
+<td>(加密)产品名称</td>
+</tr>
+<tr class="row-even"><td>dd</td>
+<td>string</td>
+<td>(加密)手机号/微信id</td>
+</tr>
+<tr class="row-odd"><td>nn</td>
+<td>string</td>
+<td>(加密)设备号</td>
+</tr>
+<tr class="row-even"><td>ver</td>
+<td>string</td>
+<td>系列总版本号</td>
+</tr>
+<tr class="row-odd"><td>amt</td>
+<td>string</td>
+<td>(加密)订单金额</td>
+</tr>
+<tr class="row-even"><td>ctype</td>
+<td>string</td>
+<td>前端类型 _a / _i</td>
+</tr>
+<tr class="row-odd"><td>cvnumber</td>
+<td>string</td>
+<td>前端app版本号</td>
+</tr>
+</tbody>
+</table>
+<p><strong>rtype:</strong> string</p>
+<p><strong>return:</strong> 成功返回</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">yes</span> <span class="c1"># &quot;yes&quot;为成功，其它为失败</span>
+</pre></div>
+</div>
+<p>###MagicDLRecorder</p>
+<p><strong>url:</strong> <a class="reference external" href="http://HOSTNAME/BlingoServlet/MagicDLRecorder">http://HOSTNAME/BlingoServlet/MagicDLRecorder</a>?</p>
+<p><strong>method:</strong> GET</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">params</th>
+<th class="head">type</th>
+<th class="head">desc</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>dd</td>
+<td>string</td>
+<td>(加密)设备号</td>
+</tr>
+<tr class="row-odd"><td>pp</td>
+<td>string</td>
+<td>(加密)电话号码</td>
+</tr>
+<tr class="row-even"><td>dl</td>
+<td>string</td>
+<td>深度链接ID</td>
+</tr>
+</tbody>
+</table>
+<p><strong>rtype:</strong> string or json</p>
+<p><strong>return:</strong> 成功返回</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">02</span> <span class="c1">#  00 – 无设备号, 01 – 无手机号, 02 – 无深度链接ID</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">bond</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1"># 0 – 设备号未绑定手机，1 – 设备号已绑定手机</span>
+    <span class="n">pho</span> <span class="o">=</span> <span class="mi">18730603791</span><span class="p">;</span> <span class="c1"># bond=0，空串；bond=1，电话号码</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>###Feedback</p>
+<p><strong>url:</strong> <a class="reference external" href="http://HOSTNAME/BlingoServlet/Feedback">http://HOSTNAME/BlingoServlet/Feedback</a>?</p>
+<p><strong>method:</strong> GET</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="68%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">params</th>
+<th class="head">type</th>
+<th class="head">desc</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>nn</td>
+<td>string</td>
+<td>用户名</td>
+</tr>
+<tr class="row-odd"><td>cc</td>
+<td>string</td>
+<td>反馈内容，限140个汉字以内</td>
+</tr>
+<tr class="row-even"><td>tt</td>
+<td>string</td>
+<td>联系方式（电话/邮箱/qq，非必填）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>rtype:</strong> string</p>
+<p><strong>return:</strong> 成功返回</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">yes</span> <span class="c1"># yes，成功；no，失败</span>
+</pre></div>
+</div>
+<p>###Event</p>
+<p><strong>url:</strong> <a class="reference external" href="http://HOSTNAME/BlingoServlet/Event">http://HOSTNAME/BlingoServlet/Event</a>?</p>
+<p><strong>method:</strong> GET</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">params</th>
+<th class="head">type</th>
+<th class="head">desc</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>nn</td>
+<td>string</td>
+<td>用户名</td>
+</tr>
+<tr class="row-odd"><td>ee</td>
+<td>string</td>
+<td>事件名</td>
+</tr>
+</tbody>
+</table>
+<p><strong>rtype:</strong> string</p>
+<p><strong>return:</strong> 成功返回</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>“”
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
       <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2017, wei.j.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
-      
-      |
-      <a href="_sources/index.rst.txt"
-          rel="nofollow">Page source</a>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="nav-item nav-item-0"><a href="#">Magiland 1.0 文档</a> &#187;</li> 
+      </ul>
     </div>
-
-    
-
-    
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, wei.j.
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5 创建。
+    </div>
   </body>
 </html>
