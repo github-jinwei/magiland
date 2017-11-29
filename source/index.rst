@@ -10,6 +10,7 @@ Welcome to Magiland's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   API v2.2
 
 
 
